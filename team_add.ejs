@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Head -->
+<%- include('./common/head')%>
+
+    <body>
+        <div class="wrapper d-flex align-items-stretch">
+
+            <!-- Navbar -->
+            <%- include('./common/sidenavbar')%>
+
+                <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Team Data Add</h2>
+        <div class="container px-4 px-lg-5">
+
+            <form action="/admin/storeteam" method="post" enctype="multipart/form-data">
+                <hr>
+                
+                <label for="team_member_name"><b>Team Member Name</b></label>
+                <input type="text" placeholder="Enter Name" name="t_name" required></br>
+
+                <label for="designation"><b>Designation</b></label>
+                <input type="text" placeholder="Enter Your Designation" name="t_designation" required></br>
+
+                <label for="gender"><b>Gender</b> </label>
+                <input type="radio" name="t_gender" value="male"> Male
+                <input type="radio" name="t_gender" value="female"> Female
+                <input type="radio" name="t_gender" value="others"> Others</br>
+
+                <label for="image"><b>Image</b></label>
+                <input type="file" class="form-control" name="image" required>
+
+                <hr>
+
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+
+        </div>
+		</div>
+
+        <!-- Footer -->
+        <%- include('./common/footer')%>

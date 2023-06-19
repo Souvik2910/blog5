@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Head -->
+<%- include('./common/head')%>
+
+    <body>
+        <div class="wrapper d-flex align-items-stretch">
+
+            <!-- Navbar -->
+            <%- include('./common/sidenavbar')%>
+
+                <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Team Data Add</h2>
+        <div class="container px-4 px-lg-5">
+  
+            <form action="/admin/teamupdate" method="post" enctype="multipart/form-data">
+
+              <input type="hidden" name="t_id" value="<%=singleData._id%>">
+
+
+              <div class="form-group">
+                <label for="team_member_name">Team Member Name</label>
+                <input type="text" class="form-control" value="<%=singleData.team_member_name%>" name="t_name"
+                  placeholder="Enter Team Member Name">
+              </div>
+
+              <div class="form-group">
+                <label for="designation"> Designation </label>
+                <input type="text" class="form-control" value="<%= singleData.designation%>" name="t_designation"
+                  placeholder="Enter Your Designation">
+              </div>
+
+              <div class=" form-group">
+                <label for="gender">Gender</label>
+                <input type="radio" name="t_gender" value="male" <%= singleData.gender=='male' ? "checked" : '' %>> Male
+                <input type="radio" name="t_gender" value="female" <%= singleData.gender=='female' ? "checked" : '' %>>Female
+                <input type="radio" name="t_gender" value="others" <%= singleData.gender=='others' ? "checked" : '' %>>Others
+              </div>
+                            
+              <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" class="form-control" name="image">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+          </div>
+        </div>
+        
+         <!-- Footer -->
+         <%- include('./common/footer')%>

@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="css/style.css">
+
+<div class="Admin-login-form">
+  
+  <% if (message.length > 0) { %> 
+    <div class="alert alert-success">
+      <%= message %>
+    </div>  
+    <% } %>
+
+    <h1>Admin Log-In</h1>
+    <form method="post" action="/admin/adminsignin">
+
+    <label for="email"><b>E-mail</b></label>
+    <input type="email" placeholder="Enter your Mail-Id" name="email" required></br>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Your Password" name="password" required> </br>
+      
+    <button type="submit">Login</button> </br>
+
+  </div>
+  <div class="clear"></div>
+
+</form>

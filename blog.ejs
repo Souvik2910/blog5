@@ -1,0 +1,45 @@
+<!-- Head -->
+<%- include('./common/head')%>
+  
+<body>
+		<div class="wrapper d-flex align-items-stretch">
+      
+            <!-- Navbar -->
+			<%- include('./common/sidenavbar')%>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Blog Page</h2>
+        
+
+        <!-- Post Content-->
+        <article class="mb-4">
+          <div class="container px-4 px-lg-5">
+                  <form action="/addpost" method="POST" enctype="multipart/form-data">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Post Title</label><br>
+                        <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter post title">
+                      
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Post Subtitle</label><br>
+                        <input type="text" class="form-control" name="subtitle" id="exampleInputPassword1" placeholder="enter post sub title">
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">Enter Post</label><br>
+                      <textarea name="editor1"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label for="">Post image:</label><br>
+                      <input type="file" class="form-control" name="image" id="exampleInputPassword1" placeholder="enter post sub title">
+                    </div>
+                    <p>
+                      <button type="submit" class="btn btn-primary">Post</button>
+                    </form>
+              </div>
+          </div>
+        </div>
+      </article>
+
+  <!-- Footer -->
+  <%- include('./common/footer')%>

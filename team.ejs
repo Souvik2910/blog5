@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Head -->
+<%- include('./common/head')%>
+  
+<body>
+		<div class="wrapper d-flex align-items-stretch">
+      
+            <!-- Navbar -->
+			<%- include('./common/sidenavbar')%>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Team Page</h2>
+
+<a href="/admin/teamadd" class="btn-btn-info">Add Data</a>
+            <% if (message.length>0) {%> 
+              <div class="alert alert-success">
+                <%= message %>
+              </div>  
+              <%}%> 
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Sl. No.</th>
+              <th scope="col">Name</th>
+              <th scope="col">Degisnation</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Image</th>
+              <th colspan="2">Action</th>
+            </tr>
+          </thead>
+          <% if(displaydata.length>0) {%>
+            <tbody>
+              <% for(let team of displaydata) {%>
+                <tr>
+                  <th scope="row">1</th>
+                  <td><%= team.team_member_name %></td>
+                  <td><%= team.designation %></td>
+                  <td><%= team.gender %></td>
+                  <td><img src="<%= team.image %>" alt="Team Image" width="50px" height="50px"></td>
+                  <td><a href="teamedit/<%= team.id %>" class="btn-btn-success">Edit</a></td>
+                  <td><a href="teamdelete/<%= team.id %>" class="btn-btn-danger">Delete</a></td>
+                </tr>
+            </tbody>
+            <%}} else {%>
+                <h1>No Data Found</h1>
+                <% } %>
+        </table>
+      </div>
+
+  <!-- Footer -->
+  <%- include('./common/footer')%>

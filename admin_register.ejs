@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="css/style.css">
+
+<div class="Admin-registration-form">
+    <% if (message.length > 0) { %> 
+      <div class="alert alert-success">
+        <%= message %>
+      </div>  
+      <% } %>
+    <h1> Admin Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <form method="post" action="adminsignup">
+
+    <label for="name"><b>Full Name</b></label>
+    <input type="text" placeholder="Enter Full-Name" name="name" required></br>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" required></br>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required></br>
+
+    <hr>
+
+    <button type="submit" class="registerbtn">Register</button>
+
+    <p>Already have an account? <a href="/admin">Admin Sign in</a></p>
+
+  </div>
+  <div class="clear"></div>
+</div>
+</form>
